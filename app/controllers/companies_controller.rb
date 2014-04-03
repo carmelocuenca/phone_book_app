@@ -10,6 +10,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    fresh_when last_modified: @company.updated_at
   end
 
   # GET /companies/new
