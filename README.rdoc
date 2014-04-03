@@ -1,0 +1,31 @@
+== README
+
+Una aplicación rails con compañias y empleados para el estudio de la cache
+
+Things you may want to cover:
+
+* Ruby version
+See files .ruby-version y .ruby-gemset
+
+* System dependencies
+Make "bundle install"
+
+* Configuration
+
+* Database creation
+$ rake db:migrate
+
+* Database initialization
+El fichero seed.rb utiliza la gema "Faker" para poblar las entradas de las compañias y empleados
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
