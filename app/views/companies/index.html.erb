@@ -1,28 +1,32 @@
 <h1>Listing companies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Number of employees</th> <!-- &\circled{1}& -->
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
+<% cache('companies') do %>
+  <table>
+    <thead>
       <tr>
-        <td><%= company.name %></td>
-        <td><%= company.employees.count %></td> <!-- &\circled{2}& -->
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Number of employees</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @companies.each do |company| %>
+        <tr>
+          <% cache(company) do %>
+            <td><%= company.name %></td>
+            <td><%= company.employees.count %></td>
+            <td><%= link_to 'Show', company %></td>
+            <td><%= link_to 'Edit', edit_company_path(company) %></td>
+            <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
 <br>
 
