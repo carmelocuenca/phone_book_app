@@ -1,5 +1,7 @@
 PhoneBookApp::Application.routes.draw do
 
+  match '/search', to: 'companies#search', via: 'get'
+
   resources :employees
 
   resources :companies

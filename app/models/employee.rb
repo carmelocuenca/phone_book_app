@@ -5,6 +5,8 @@ class Employee < ActiveRecord::Base
   validates :last_name, presence: true
   validates :company, presence: true
 
+  # scope :workers_in, -->(state) {includes(:company).where("companies.state = ?", state).references(:company)
+
   def to_s
     "#{first_name} #{last_name}"
   end

@@ -3,6 +3,11 @@ class CompaniesController < ApplicationController
 
   cache_sweeper :companies_sweeper, only: [:create]
 
+  # GET /companies/search?query='Texas'
+  def search
+    @companies = Company.workers_in(params[:state])
+  end
+
   # GET /companies
   # GET /companies.json
 
