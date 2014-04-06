@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-4096.times do
+256.times do
   company = Company.new(name: Faker::Company.name,
                         state: Faker::Address.state)
   if company.save
