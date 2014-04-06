@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
+#ruby-gemset=phone_book_app
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -32,7 +31,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use sqlite3 as the database for Active Record
+group :test, :development do
+  gem 'sqlite3'
+end
+
 gem 'faker'
+gem 'rails-observers'
+gem 'dalli'
 
 group :production do
   gem 'pg', '0.15.1'

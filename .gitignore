@@ -1,11 +1,19 @@
-.bundle
-db/*.sqlite3*
-log/*.log
-*.log
-/tmp/
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore other unneeded files.
 doc/
 *.swp
 *~
 .project
 .DS_Store
-cookies.txt
+.idea
+bundler_stubs/

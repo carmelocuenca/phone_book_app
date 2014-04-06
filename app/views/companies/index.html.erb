@@ -1,6 +1,6 @@
 <h1>Listing companies</h1>
 
-<% cache('table_of_all_companies') do %>
+<% cache('table_of_all_companies', skip_digest: true) do %>
   <table>
     <thead>
       <tr>
